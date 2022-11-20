@@ -5,15 +5,16 @@ In order to test the duplications in webpack bundle. The `app` has project depen
 `$ yarn list --pattern @wtlin1228`
 
 ```
-├─ @wtlin1228/button2@2.5.0
-├─ @wtlin1228/editor2@1.0.0
-│  ├─ @wtlin1228/button2@1.3.0
-│  └─ @wtlin1228/icon@1.1.1
-├─ @wtlin1228/icon@3.0.0
-└─ @wtlin1228/modal-dialog@1.0.0
-   ├─ @wtlin1228/button2@1.3.0
-   │  └─ @wtlin1228/icon@1.1.1
-   └─ @wtlin1228/icon@2.0.0
+.
+├── @wtlin1228/editor2 1.0.0
+│   └── @wtlin1228/button2 1.3.0 (duplicate)
+│       └── @wtlin1228/icon 1.1.1 (duplicate)
+├── @wtlin1228/modal-dialog 1.0.0
+│   ├── @wtlin1228/button2 1.3.0 (duplicate)
+│   │   └── @wtlin1228/icon 1.1.1 (duplicate)
+│   └── @wtlin1228/icon 2.0.0
+├── @wtlin1228/button2 2.5.0
+└── @wtlin1228/icon 3.0.0
 ```
 
 Then we will find there are 4 `@wtlin1228/icon` and 3 `@wtlin1228/button` inside our webpack bundle. Which could be reduced to 3 and 2 for each.
