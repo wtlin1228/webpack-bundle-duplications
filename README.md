@@ -34,7 +34,7 @@ Reproduce steps:
 
 ### With `DeduplicateWebpackPlugin`
 
-Use `DeduplicateWebpackPlugin` to deduplicate the bundle.
+Use `DeduplicateWebpackPlugin` to deduplicate the bundle. In my experimental tool project `/app`. The bundle size increased by `node_modules/@wtlin1228` is reduced by **20.5%**. So, that could be a good optimization for more complex projects.
 
 ```js
 // webpack config
