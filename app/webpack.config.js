@@ -5,6 +5,8 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const BundleAnalyzerPlugin =
   require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
+const WebpackDeDupPlugin = require("../my-webpack-plugin");
+
 const isProduction = process.env.NODE_ENV == "production";
 
 const config = {
@@ -12,6 +14,7 @@ const config = {
   output: {
     path: path.resolve(__dirname, "dist"),
   },
+  devtool: "source-map",
   devServer: {
     open: true,
     host: "localhost",
@@ -25,6 +28,11 @@ const config = {
     // Learn more about plugins from https://webpack.js.org/configuration/plugins/
 
     new BundleAnalyzerPlugin(),
+
+    new WebpackDeDupPlugin({
+      cacheDir: path.resolve(__dirname, "webpack-cache"),
+      rootPath: path.resolve(__dirname),
+    }),
   ],
   module: {
     rules: [

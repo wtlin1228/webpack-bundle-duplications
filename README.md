@@ -32,6 +32,34 @@ Reproduce steps:
 3. `$ yarn build`
 4. open browser with `http://127.0.0.1:8888/`
 
+### With `DeduplicateWebpackPlugin`
+
+Use `DeduplicateWebpackPlugin` to deduplicate the bundle.
+
+```js
+// webpack config
+const config = {
+  // ...
+
+  plugins: [
+    // ...
+
+    new WebpackDeDupPlugin({
+      cacheDir: path.resolve(__dirname, "webpack-cache"),
+      rootPath: path.resolve(__dirname),
+    }),
+
+    // ...
+  ],
+
+  // ...
+};
+```
+
+![icon-bundle-deduplications](icon-bundle-deduplications.png)
+
+![button-bundle-deduplications](button-bundle-deduplications.png)
+
 ### Webpack Plugins trying to solve this problem
 
 - https://github.com/atlassian-labs/webpack-deduplication-plugin
