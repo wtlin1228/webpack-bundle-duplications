@@ -47,6 +47,7 @@ const config = {
     new WebpackDeDupPlugin({
       cacheDir: path.resolve(__dirname, "webpack-cache"),
       rootPath: path.resolve(__dirname),
+      packageManager: "yarn",
     }),
 
     // ...
