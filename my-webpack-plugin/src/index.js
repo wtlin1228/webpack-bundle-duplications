@@ -7,10 +7,12 @@ class DeduplicateWebpackPlugin {
    * @param {Object} options
    * @param {string} options.cacheDir
    * @param {string} options.rootPath
+   * @param {'npm'|'yarn'} options.packageManager
    */
-  constructor({ cacheDir, rootPath }) {
+  constructor({ cacheDir, rootPath, packageManager }) {
     this.cacheDir = cacheDir;
     this.rootPath = rootPath;
+    this.packageManager = packageManager;
   }
 
   /**
@@ -23,10 +25,11 @@ class DeduplicateWebpackPlugin {
       ...compiler.options.resolve,
     });
 
-    const { cacheDir, rootPath } = this;
+    const { cacheDir, rootPath, packageManager } = this;
     const replaceTable = createReplaceTable({
       cacheDir,
       rootPath,
+      packageManager,
       resolveSync,
     });
 

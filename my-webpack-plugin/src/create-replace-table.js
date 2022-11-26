@@ -97,12 +97,18 @@ const generateReplaceTable = (packageJsonsByKeyFull, resolveSync) => {
 
 /**
  * @param {string} rootPath root path
+ * @param {'npm'|'yarn'} packageManager package manager
  * @returns {string} cache key
  */
-const getCacheKey = (rootPath) => {
-  const yarnLock = fs.readFileSync(path.resolve(rootPath, "yarn.lock"));
+const getCacheKey = (rootPath, packageManager) => {
+  let lockfile;
+  if (packageManager === "npm") {
+    lockfile = fs.readFileSync(path.resolve(rootPath, "package-lock.json"));
+  } else {
+    lockfile = fs.readFileSync(path.resolve(rootPath, "yarn.lock"));
+  }
   const hash = crypto.createHash("md5");
-  hash.update(yarnLock);
+  hash.update(lockfile);
   return hash.digest("hex");
 };
 
@@ -110,16 +116,22 @@ const getCacheKey = (rootPath) => {
  * @param {Object} options options
  * @param {string} options.rootPath root path
  * @param {string} options.cacheDir cache directory
+ * @param {'npm'|'yarn'} options.packageManager package manager
  * @param {ResolveSync} options.resolveSync synchronous resolve function
  * @returns {ReplaceTable} replace table
  */
-const createReplaceTable = ({ rootPath, cacheDir, resolveSync }) => {
+const createReplaceTable = ({
+  rootPath,
+  cacheDir,
+  packageManager,
+  resolveSync,
+}) => {
   if (!rootPath && !cacheDir) {
     return;
   }
 
   mkdirp.sync(cacheDir);
-  const cacheKey = getCacheKey(rootPath);
+  const cacheKey = getCacheKey(rootPath, packageManager);
   const cacheFileName = path.resolve(
     cacheDir,
     `duplicates-${cacheKey}.${CACHE_BUST}.json`
