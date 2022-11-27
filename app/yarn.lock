@@ -711,12 +711,12 @@
   resolved "https://registry.yarnpkg.com/@webpack-cli/serve/-/serve-2.0.0.tgz#f08ea194e01ed45379383a8886e8c85a65a5f26a"
   integrity sha512-Rumq5mHvGXamnOh3O8yLk1sjx8dB30qF1OeR6VC00DIR6SLJ4bwwUGKC4pE7qBFoQyyh0H9sAg3fikYgAqVR0w==
 
-"@wtlin1228/button2@^1.3.0":
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/@wtlin1228/button2/-/button2-1.3.0.tgz#e27639ff6718f90c52b9316b15ad524be050ac7b"
-  integrity sha512-YgIuN60cDrDFcjEHAfKZTAJS6AwzRd4XXZ9pXIaAUmWjKlaeEFiA/MCz1EzJLAI0aazkbKW7/dVIYiOSAlRfNQ==
+"@wtlin1228/button2@^1.3.0", "@wtlin1228/button2@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@wtlin1228/button2/-/button2-1.4.0.tgz#60ad65516863a0aa95aaf7a2530279dc838a49c4"
+  integrity sha512-zszlPSGAur1EMbcchKj8HP/VGRWPkMGTMS0tmteYXZCzQUhbIHMOySPAgZ6TcDPI9P0vfaeYvvU7Eu8figuN8w==
   dependencies:
-    "@wtlin1228/icon" "^1.1.1"
+    "@wtlin1228/icon" "1.99.0"
 
 "@wtlin1228/button2@^2.5.0":
   version "2.5.0"
@@ -730,10 +730,10 @@
   dependencies:
     "@wtlin1228/button2" "^1.3.0"
 
-"@wtlin1228/icon@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@wtlin1228/icon/-/icon-1.1.1.tgz#8c7e54aa5bb8a3cd05c263e42e8e4ce0424a5186"
-  integrity sha512-bWcYoX/S9Riy9sZfyJPAs65OwHcaP0aCmib5R28XlE05OrTU2zaM1VOA4jPS09q3LNZ0zffJEwGna2U27BK4+Q==
+"@wtlin1228/icon@1.99.0":
+  version "1.99.0"
+  resolved "https://registry.yarnpkg.com/@wtlin1228/icon/-/icon-1.99.0.tgz#e815bb80a2acd7e092f8c3b95bafef7ac0090f0f"
+  integrity sha512-TctGmCNP1gsUpK8pPKd0r5evfZr6BwSbXNxmF6BMOglZzM7Y9AOLBgqsRByP1FN+JtGXDWQwPzDMK4X5uflZcQ==
 
 "@wtlin1228/icon@^2.0.0":
   version "2.0.0"
@@ -745,12 +745,12 @@
   resolved "https://registry.yarnpkg.com/@wtlin1228/icon/-/icon-3.0.0.tgz#7db86443af0404c25bc290811008959896140bc2"
   integrity sha512-x7UspucZ5qNWMXoynsYCF19LPcXz9AX8cVAMLww+e9YXNmz56K9hxIyxNXelmeJBc5M/NPdCrOrw/nqHYElFhw==
 
-"@wtlin1228/modal-dialog@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@wtlin1228/modal-dialog/-/modal-dialog-1.0.0.tgz#0192c4c2168a744097cf7eee42042ca2fb883a7f"
-  integrity sha512-WilEtxi7jnCgEmH7ev/ftx7umo4QM+59JOnc79SqEoHPr9qG9lqPWTSK2J6qCyfyFHoZa2TVSoclwFmSAgXTkA==
+"@wtlin1228/modal-dialog@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@wtlin1228/modal-dialog/-/modal-dialog-1.2.0.tgz#b1ea03b4fb0da68224e882d833b4aeef89a524e1"
+  integrity sha512-72Ecc7FjC2R4LvF/W2BuePMSq1G575cSocVNwET0yt3qS3WqzbgMSUtYe5pljTKQpiMzfPsgGyzlu7Oy0xee3A==
   dependencies:
-    "@wtlin1228/button2" "^1.3.0"
+    "@wtlin1228/button2" "^1.4.0"
     "@wtlin1228/icon" "^2.0.0"
 
 "@xtuc/ieee754@^1.2.0":
