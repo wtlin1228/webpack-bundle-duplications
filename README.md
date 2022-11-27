@@ -10,8 +10,8 @@ In order to test the duplications in webpack bundle. The `app` has project depen
 │   └── @wtlin1228/button2 1.3.0 (duplicate)
 │       └── @wtlin1228/icon 1.1.1 (duplicate)
 ├── @wtlin1228/modal-dialog 1.0.0
-│   ├── @wtlin1228/button2 1.3.0 (duplicate)
-│   │   └── @wtlin1228/icon 1.1.1 (duplicate)
+│   ├── @wtlin1228/button2 1.4.0 (duplicate)
+│   │   └── @wtlin1228/icon 1.99.1 (duplicate)
 │   └── @wtlin1228/icon 2.0.0
 ├── @wtlin1228/button2 2.5.0
 └── @wtlin1228/icon 3.0.0
@@ -27,7 +27,7 @@ Then we will find there are 4 `@wtlin1228/icon` and 3 `@wtlin1228/button` inside
 
 Reproduce steps:
 
-1. `$ cd app`
+1. `$ cd app-with-yarn`
 2. `$ yarn`
 3. `$ yarn build`
 4. open browser with `http://127.0.0.1:8888/`
@@ -44,7 +44,7 @@ const config = {
   plugins: [
     // ...
 
-    new WebpackDeDupPlugin({
+    new DeduplicateWebpackPlugin({
       cacheDir: path.resolve(__dirname, "webpack-cache"),
       rootPath: path.resolve(__dirname),
       packageManager: "yarn",
